@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Pomodoro Timer</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body id="body">
+    <div id="heading">
+      <img id="main-logo" src="logo.svg" width="150px">
+      <div id="heading-items">
+        <ul>
+          <li><label for="toggle-btn">Change Theme</li></label>
+            <button id="toggle-btn" class="dark-mode-toggle">change theme</button>
+          <li onclick="openNav0()">To-do</li>
+          <li onclick="openNav()">Set time</li>
+          <li>Options</li>
+          <li><label for="reset-button">Reset Timer</label></li>
+        </ul>
+      </div>
+    </div>
+
+<!-- hidden todo-->   <!--
+
+<div id="hidden-nav0" class="overlay0">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav0()">&times;</a>
+  <div class="todo-list">
+    <div class="todo-item">
+      <input type="checkbox" class="todo-checkbox">
+      <input type="text" class="todo-text" placeholder="Enter a to-do...">
+      <button class="delete-btn">Delete</button>
+    </div>
+  </div>
+  <button id="add-btn">Add To-Do</button>
+</div>
+-->
+
+
+
+    <!--hidden-set time option-->
+
+    <div id="hidden-nav" class="overlay">
+      <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+      <div class="setting-time">
+        <div class="time-input-container">
+          <input type="number" id="time-input" value="25" min="1" max="60">
+          <label for="change-time-button" id="change">Change</label></p><button id="change-time-button">Change</button>
+        </div>
+      </div>
+    </div>
+
+  <!--timer -->
+
+    <hr width="800px">
+    <div id="stop-and-reset">
+    </div>
+    <div class="timer-container">
+      <div id="external-ball">
+        <div id="inner-ball">
+          <div class="time-left" id="start-button">25:00</div>
+        </div>
+      </div>
+      <div class="buttons-container">
+        <button>Start</button>
+        <button id="stop-button">Stop</button>
+        <button id="reset-button">Reset</button>
+      </div>
+    </div>
+    <script src="main.js"></script>
+  </body>
+</html>
