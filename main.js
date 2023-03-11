@@ -134,6 +134,39 @@ function closeNav0() {
   document.getElementById("hidden-nav0").style.height = "0%";
 }
 
+//Aa
+var fontButton = document.getElementById("font-button");
+var body = document.body;
+var currentFont = localStorage.getItem("font") || "Abril Fatface"; // Get the font selection from local storage or set it to Abril Fatface by default
+
+// Set the font to the current selection
+body.style.fontFamily = currentFont;
+
+// Update the font selection and style the start button elements
+function updateFont(font) {
+  if (font === "Poppins") {
+    body.style.fontFamily = "Poppins";
+    var startButtons = document.querySelectorAll("#start-button");
+  } else {
+    body.style.fontFamily = "Abril Fatface";
+    var startButtons = document.querySelectorAll("#start-button");
+  }
+
+  // Save the font selection to local storage
+  localStorage.setItem("font", font);
+}
+
+// Add a click event listener to the font button
+fontButton.addEventListener("click", function() {
+  if (currentFont === "Abril Fatface") {
+    updateFont("Poppins"); // Update the font to Poppins
+    currentFont = "Poppins";
+  } else {
+    updateFont("Abril Fatface"); // Update the font to Abril Fatface
+    currentFont = "Abril Fatface";
+  }
+});
+
 
 /* to-do */  /*
 
