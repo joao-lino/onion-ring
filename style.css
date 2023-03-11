@@ -200,6 +200,10 @@ input[type=number]::-webkit-inner-spin-button {
   display: none;
 }
 
+#todo, #options {
+   display: none; 
+}
+
 
 /*
 
