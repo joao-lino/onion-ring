@@ -1,13 +1,13 @@
 const startButton = document.getElementById("start-button");
 const resetButton = document.getElementById("reset-button");
 const timeLeft = document.querySelector(".time-left");
-const timeTit = document.querySelector(".timeTit");
+const timeFav = document.querySelector(".timeFav");
 const timeInput = document.getElementById("time-input");
 const changeTimeButton = document.getElementById("change-time-button");
 const innerBox = document.getElementById("inner-box");
 
 let timerId;
-let minutes = parseInt(timeInput.value);
+let minutes = parseInt(localStorage.getItem("timerValue")) || parseInt(timeInput.value);
 let seconds = 0;
 let isRunning = false;
 
@@ -30,7 +30,7 @@ function toggleTimer() {
       }
       seconds--;
       timeLeft.textContent = `${minutes}:${seconds < 10 ? '0' : ''}${seconds}`;
-      timeTit.textContent = `${minutes}:${seconds < 10 ? '0' : ''}${seconds}`;
+      timeFav.textContent = `${minutes}:${seconds < 10 ? '0' : ''}${seconds}`;
       const totalTimeInSeconds = minutes * 60 + seconds;
       const percentageLeft = (totalTimeInSeconds / (minutes * 60)) * 100;
       innerBox.style.width = `${percentageLeft}%`;
@@ -41,22 +41,29 @@ function toggleTimer() {
 function resetTimer() {
   clearInterval(timerId);
   isRunning = false;
-  minutes = parseInt(timeInput.value);
+  minutes = parseInt(localStorage.getItem("timerValue")) || parseInt(timeInput.value);
   seconds = 0;
-  timeLeft.textContent = `${minutes}:${seconds < 10 ? '0' : ''}${seconds}`;
+  timeLeft.textContent = `${minutes}:00`;
   innerBox.style.width = "100%";
+  audio.pause();
+  audio.currentTime = 0;
+  bell.pause(); // pause the bell audio as well
 }
 
 function updateTime() {
   minutes = parseInt(timeInput.value);
   seconds = 0;
-  timeLeft.textContent = `${minutes}:${seconds < 10 ? '0' : ''}${seconds}`;
+  timeLeft.textContent = `${minutes}:00`;
+  localStorage.setItem("timerValue", minutes);
   resetTimer();
 }
 
 function changeTime() {
   updateTime();
 }
+
+// Set the initial timeLeft text content
+timeLeft.textContent = `${minutes}:00`;
 
 startButton.addEventListener("click", toggleTimer);
 resetButton.addEventListener("click", resetTimer);
