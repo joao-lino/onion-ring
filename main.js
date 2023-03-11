@@ -1,6 +1,7 @@
 const startButton = document.getElementById("start-button");
 const resetButton = document.getElementById("reset-button");
 const timeLeft = document.querySelector(".time-left");
+const timeTit = document.querySelector(".timeTit");
 const timeInput = document.getElementById("time-input");
 const changeTimeButton = document.getElementById("change-time-button");
 const innerBox = document.getElementById("inner-box");
@@ -29,6 +30,7 @@ function toggleTimer() {
       }
       seconds--;
       timeLeft.textContent = `${minutes}:${seconds < 10 ? '0' : ''}${seconds}`;
+      timeTit.textContent = `${minutes}:${seconds < 10 ? '0' : ''}${seconds}`;
       const totalTimeInSeconds = minutes * 60 + seconds;
       const percentageLeft = (totalTimeInSeconds / (minutes * 60)) * 100;
       innerBox.style.width = `${percentageLeft}%`;
