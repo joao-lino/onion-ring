@@ -85,7 +85,7 @@ ul {
   list-style: none;
 }
 
-ul li {
+ul p {
   display: inline-block;
   margin-left: 40px;
   color: var(--secondary-color);
@@ -93,11 +93,11 @@ ul li {
   transition-duration: 0.5s;
 }
 
-ul li label {
+ul p label {
   cursor: pointer;
 }
 
-ul li:hover {
+ul p:hover {
   text-decoration: underline;
 }
 
