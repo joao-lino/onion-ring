@@ -11,33 +11,16 @@
       <img id="main-logo" src="logo.svg" width="150px">
       <div id="heading-items">
         <ul>
-          <li><label for="font-button">Aa</label><button id="font-button">Switch Font</button></li>
-          <li><label for="toggle-btn">Change Theme</li></label>
+          <p><label for="font-button">Aa</label><button id="font-button">Switch Font</button></p>
+          <p><label for="toggle-btn">Change Theme</p></label>
             <button id="toggle-btn" class="dark-mode-toggle">change theme</button>
-          <li onclick="openNav0()" id="todo">To-do</li>
-          <li onclick="openNav()">Set time</li>
-          <li id="options">Options</li>
-          <li><label for="reset-button">Reset Timer</label></li>
+          <p onclick="openNav0()"id="todo">To-do</p>
+          <p onclick="openNav()">Set time</p>
+          <p id="options">Options</p>
+          <p><label for="reset-button">Reset Timer</label></p>
         </ul>
       </div>
     </div>
-
-<!-- hidden todo-->   <!--
-
-<div id="hidden-nav0" class="overlay0">
-  <a href="javascript:void(0)" class="closebtn" onclick="closeNav0()">&times;</a>
-  <div class="todo-list">
-    <div class="todo-item">
-      <input type="checkbox" class="todo-checkbox">
-      <input type="text" class="todo-text" placeholder="Enter a to-do...">
-      <button class="delete-btn">Delete</button>
-    </div>
-  </div>
-  <button id="add-btn">Add To-Do</button>
-</div>
--->
-
-
 
     <!--hidden-set time option-->
 
@@ -68,6 +51,16 @@
         <button id="reset-button">Reset</button>
       </div>
     </div>
+<!-- to do -->
+    <div id="todo-div">
+    <div id="myDIV" class="header">
+  <input type="text" id="todo-input" placeholder="Add a to-do" maxlength="30">
+  <span onclick="newElement()" class="addBtn">Add</span>
+</div>
+
+<ul id="myUL">
+</ul>
+</div>
     <script src="main.js"></script>
   </body>
 </html>
